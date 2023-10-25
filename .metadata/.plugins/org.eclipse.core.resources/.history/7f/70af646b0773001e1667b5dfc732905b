@@ -1,0 +1,50 @@
+package Generic_Library;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class BaseClass {
+	public WebDriver driver;
+	public static WebDriver sdriver;
+	
+	public PropertyFileUtility pfutil=new PropertyFileUtility();
+	
+	@BeforeClass 
+	public void configbrowser(String bro) throws Throwable
+	{
+		String brow=pfutil.getDataFromProperties("Browser");
+		String urr=pfutil.getDataFromProperties("url");
+		
+		if (brow.equals("chrome")) {
+			WebDriverManager.chromedriver().setup();
+			driver=new ChromeDriver();	
+		}
+		else if(brow.equals("firefox")) {
+			WebDriverManager.firefoxdriver().setup();
+			driver=new FirefoxDriver();
+		}
+		else if(brow.equals("Microsoft edge")) {
+			WebDriverManager.edgedriver().setup();
+			driver=new EdgeDriver();
+		}
+		
+		sdriver=driver;
+		driver.get(urr);
+	}
+	
+	@Test
+	public void find()
+	{
+		System.out.println("printing");
+	}
+	
+	
+	
+
+}

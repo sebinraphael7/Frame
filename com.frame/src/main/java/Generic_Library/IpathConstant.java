@@ -1,0 +1,9 @@
+package Generic_Library;
+
+public interface IpathConstant {
+	
+String PropertyfilePath="./src/test/resources/frameProp.properties";
+String ExcelFilePath="./src/test/resources/Frame.xlsx";
+
+
+}

@@ -1,0 +1,22 @@
+package Generic_Library;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+
+public class ExcelUtility {
+	public String readSingleExcelData(String sheetname,int rownum,int cellnum) throws EncryptedDocumentException, IOException 
+	{
+		FileInputStream fis =new FileInputStream(IpathConstant.ExcelFilePath);
+		Workbook wb=WorkbookFactory.create(fis);
+		String data=wb.getSheet("sheetname").getRow(rownum).getCell(cellnum).getStringCellValue();
+//		System.out.println(data);
+		return data;
+		
+		
+	}
+
+}

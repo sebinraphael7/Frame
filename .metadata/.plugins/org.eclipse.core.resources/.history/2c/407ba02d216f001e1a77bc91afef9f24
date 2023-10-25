@@ -1,0 +1,49 @@
+package Generic_Library;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import com.beust.jcommander.Parameter;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class BaseClass {
+	private WebDriver driver;
+	
+	@BeforeClass
+	
+	public static WebDriver configbrowser(String bro)
+	{
+		WebDriver driver=null;
+		if (bro.equals("firefox"))
+		{
+			WebDriverManager.firefoxdriver().setup();
+			driver=new FirefoxDriver();
+		}
+		else if (bro.equals("chrome"))
+		{
+			WebDriverManager.chromedriver().setup();
+			driver=new ChromeDriver();
+		}
+		else if (bro.equals("edge"))
+		{
+			WebDriverManager.chromedriver().setup();
+			driver=new EdgeDriver();
+		}
+		return driver;
+	}
+	@Test
+	public void find()
+	{
+		driver.get("https://www.amazon.in/");
+		System.out.println("print");
+	}
+	
+	
+	
+
+}

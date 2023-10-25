@@ -1,0 +1,12 @@
+package Generic_Library;
+
+import java.util.Random;
+
+public class JavaUtility {
+	public static void main(String[] args) {
+		Random rand=new Random();
+		int randomnumber=rand.nextInt(1000);
+		System.out.println(randomnumber);
+	}
+
+}

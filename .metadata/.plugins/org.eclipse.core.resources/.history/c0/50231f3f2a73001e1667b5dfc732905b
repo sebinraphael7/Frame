@@ -1,0 +1,7 @@
+package Generic_Library;
+
+import org.testng.ITestListener;
+
+public class ListenerClass implements ITestListener {
+
+}

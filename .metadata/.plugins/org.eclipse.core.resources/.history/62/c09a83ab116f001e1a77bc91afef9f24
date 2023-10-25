@@ -1,0 +1,24 @@
+package Generic_Library;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import com.beust.jcommander.Parameters;
+
+public class BaseClass {
+	
+	public WebDriver driver;
+	public static WebDriver sdriver;
+	public PropertyFileUtility pfu=new PropertyFileUtility();
+	
+	@Test
+	public void m2()
+	{
+		
+	}
+	
+	
+	
+
+}
