@@ -90,11 +90,10 @@ public class PractiseTest {
 	DateTimeFormatter formatter=DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 	String sc=currentDateTime.format(formatter);
 	System.out.println(sc);
-	String scr=sc.replaceAll(":","-");
 		
 		TakesScreenshot t=(TakesScreenshot)driver;
 		File src=t.getScreenshotAs(OutputType.FILE);
-		File dest=new File("./Screenshot/"+scr+".png");
+		File dest=new File("./Screenshot/"+sc+".png");
 		FileUtils.copyFile(src, dest);
 		driver.close();
 	}

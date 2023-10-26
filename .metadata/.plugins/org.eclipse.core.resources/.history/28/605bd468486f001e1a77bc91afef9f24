@@ -1,7 +1,0 @@
-package Generic_Library;
-
-public class WebdriverUtility {
-	public void configBrowser(String Browser) throws Throwable{
-//		String url=
-	}
-}
